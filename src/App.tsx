@@ -1,4 +1,4 @@
-import { Navbar } from './components';
+import { Cursor, Navbar } from './components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { WorkPage } from './pages';
 
@@ -7,6 +7,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Navbar />
+        <Cursor />
         <main className="px-4">
           <Routes>
             <Route path="/" element={<WorkPage />} />
