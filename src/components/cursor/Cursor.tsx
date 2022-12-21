@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
+import useDeviceType from '../../hooks/useDeviceType';
 import { CursorType } from '../../interfaces';
 
 const Cursor = () => {
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
+  const [cursorPos, setCursorPos] = useState({ x: 100, y: 100 });
   const [cursorType, setCursorType] = useState<CursorType>('default');
+  const deviceType = useDeviceType();
 
   const handleCursor = (e: MouseEvent) => {
     const element = document.elementFromPoint(e.clientX, e.clientY);
@@ -29,15 +31,19 @@ const Cursor = () => {
     return () => window.removeEventListener('mousemove', handleCursor);
   }, []);
 
+  if (deviceType === 'mobile' || deviceType === 'tablet') {
+    return;
+  }
+
   const variants = {
     default: {
-      x: cursorPos.x,
-      y: cursorPos.y,
+      x: cursorPos.x - 3,
+      y: cursorPos.y - 3,
       transition: { duration: 0.02 },
     },
     'hover-link': {
-      x: cursorPos.x,
-      y: cursorPos.y,
+      x: cursorPos.x - 3,
+      y: cursorPos.y - 3,
       scale: 4.5,
       transition: {
         duration: 0.02,
@@ -51,7 +57,7 @@ const Cursor = () => {
 
   return (
     <motion.div
-      className="w-4 h-4 bg-secondary-gray rounded-full mix-blend-difference fixed z-50 pointer-events-none"
+      className="w-4 h-4 bg-primary rounded-full mix-blend-difference fixed z-50 pointer-events-none"
       variants={variants}
       animate={cursorType}
     />

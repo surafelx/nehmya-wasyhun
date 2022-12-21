@@ -17,10 +17,11 @@ body {
     @apply text-primary bg-secondary-black;
   }
 
-  .strike-anim {
+  .strike-hover {
     @apply relative before:block before:absolute before:w-full before:h-[7%]
   before:bg-secondary-black before:top-[58%] before:left-0 before:scale-x-0 
     before:transition-transform before:origin-right before:duration-1000 
-    hover:before:scale-x-100 hover:before:origin-left;
+    before:pointer-events-none hover:before:scale-x-100 hover:before:origin-left
+    [&.active]:before:scale-x-100;
   }
 }

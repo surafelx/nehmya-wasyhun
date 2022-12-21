@@ -64,9 +64,9 @@ const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
         variants={bgVariants}
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
-        className="absolute h-full w-full bg-secondary-gray -z-10"
+        className="absolute h-full w-full bg-primary -z-10"
       />
-      <div className="flex flex-col h-full  md:py-14 py-10">
+      <div className="flex flex-col h-full  md:py-14 py-10 text-secondary-black">
         <ul className="flex flex-1 flex-col items-center justify-center">
           {menuItems.map((item, i) => (
             <motion.li
@@ -82,16 +82,19 @@ const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
                   duration: 0.25,
                 },
               }}
+              className="my-4"
             >
               <NavLink
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className="relative"
+                tabIndex={isOpen ? 0 : -1}
+                className="relative flex strike-hover opacity-80 
+                  [&.active]:opacity-100 hover:opacity-100 transition-colros duration-500"
               >
-                <span className="absolute -left-5 text-lg space-x-0 z-0 hover-link">
-                  0{i}
+                <span className="absolute -left-5 text-lg hover-link">
+                  0{i + 1}
                 </span>
-                <span className="text-8xl uppercase hover-link strike-anim">
+                <span className="md:text-8xl text-5xl uppercase hover-link">
                   {item.name}
                 </span>
               </NavLink>
@@ -109,10 +112,16 @@ const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
           }}
           className="flex w-full md:px-12 px-4 justify-between"
         >
-          <span className="uppercase">Director of photography</span>
-          <div className="flex gap-3">
+          <span className="uppercase md:block hidden">
+            Director of photography
+          </span>
+          <div className="flex gap-3 justify-around md:flex-none flex-1">
             {links.map((link) => (
-              <a href={link.href} className="uppercase">
+              <a
+                href={link.href}
+                tabIndex={isOpen ? 0 : -1}
+                className="uppercase strike-hover hover-link"
+              >
                 {link.name}
               </a>
             ))}
