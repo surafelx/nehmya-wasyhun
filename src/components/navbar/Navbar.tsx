@@ -15,9 +15,11 @@ const Navbar = () => {
           <Link to="/" className="uppercase">
             <div className="flex gap-4">
               <span className="text-neutral-300">Name Surname</span>
-              <span className="text-gray-500 md:block hidden">
-                Director of photography
-              </span>
+              {!isMenuOpen ? (
+                <span className="text-gray-500 md:block hidden">
+                  Director of photography
+                </span>
+              ) : null}
             </div>
           </Link>
           <button onClick={handleMenu} className="strike-anim">
@@ -25,7 +27,10 @@ const Navbar = () => {
           </button>
         </nav>
       </header>
-      <Menu isOpen={isMenuOpen} />
+      <Menu
+        isOpen={isMenuOpen}
+        setIsOpen={(state: boolean) => setIsMenuOpen(state)}
+      />
     </>
   );
 };

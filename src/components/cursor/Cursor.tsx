@@ -33,14 +33,14 @@ const Cursor = () => {
     default: {
       x: cursorPos.x,
       y: cursorPos.y,
-      transition: { duration: 0 },
+      transition: { duration: 0.02 },
     },
     'hover-link': {
       x: cursorPos.x,
       y: cursorPos.y,
       scale: 4.5,
       transition: {
-        duration: 0,
+        duration: 0.02,
         scale: {
           duration: 0.5,
           ease: 'easeInOut',
