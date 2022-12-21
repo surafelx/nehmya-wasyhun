@@ -10,8 +10,8 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="fixed top-0 w-full px-4 z-50">
-        <nav className="flex justify-between text-lg md:py-8 py-4 md:px-8 px-0">
+      <header className="fixed top-0 w-full z-50">
+        <nav className="flex justify-between text-lg md:py-8 py-4 md:px-12 px-4">
           <Link to="/" className="uppercase">
             <div className="flex gap-4">
               <span className="text-neutral-300">Name Surname</span>

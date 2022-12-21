@@ -9,8 +9,10 @@ const Cursor = () => {
   const handleCursor = (e: MouseEvent) => {
     const element = document.elementFromPoint(e.clientX, e.clientY);
 
-    if (element?.tagName === 'BUTTON') {
-      setCursorType('hover');
+    if (element?.classList.contains('hover-link')) {
+      setCursorType('hover-link');
+    } else if (element?.classList.contains('hover-image')) {
+      setCursorType('hover-image');
     } else {
       setCursorType('default');
     }
@@ -29,14 +31,14 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: cursorPos.x - 5,
-      y: cursorPos.y - 5,
+      x: cursorPos.x,
+      y: cursorPos.y,
       transition: { duration: 0 },
     },
-    hover: {
-      x: cursorPos.x - 5,
-      y: cursorPos.y - 5,
-      scale: 4,
+    'hover-link': {
+      x: cursorPos.x,
+      y: cursorPos.y,
+      scale: 4.5,
       transition: {
         duration: 0,
         scale: {
@@ -49,7 +51,7 @@ const Cursor = () => {
 
   return (
     <motion.div
-      className="w-4 h-4 bg-secondary-gray rounded-full mix-blend-difference z-50"
+      className="w-4 h-4 bg-secondary-gray rounded-full mix-blend-difference fixed z-50 pointer-events-none"
       variants={variants}
       animate={cursorType}
     />

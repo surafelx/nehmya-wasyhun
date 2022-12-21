@@ -8,15 +8,19 @@
   cursor: none !important;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @layer base {
   html {
     @apply text-primary bg-secondary-black;
   }
 
   .strike-anim {
-    @apply relative hover:before:scale-100 before:block before:absolute 
-    before:w-full before:h-0.5 before:bg-secondary-black before:top-1/2 
-    before:left-0 before:scale-0 before:transition-all before:origin-right 
-    before:duration-500;
+    @apply relative before:block before:absolute before:w-full before:h-[7%]
+  before:bg-secondary-black before:top-[58%] before:left-0 before:scale-x-0 
+    before:transition-transform before:origin-right before:duration-1000 
+    hover:before:scale-x-100 hover:before:origin-left;
   }
 }
