@@ -10,7 +10,7 @@ function App() {
     <div>
       <Navbar />
       <Cursor />
-      <main className="px-4">
+      <main>
         <AnimatePresence initial={false}>
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<WorkPage />} />

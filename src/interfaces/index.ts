@@ -1,3 +1,4 @@
 type CursorType = 'default' | 'hover-link' | 'hover-image';
+type SortOptions = 'all' | 'ocean' | 'winter' | 'commercials';
 
-export type { CursorType };
+export type { CursorType, SortOptions };
