@@ -1,19 +1,23 @@
 import { Cursor, Navbar } from './components';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import { WorkPage } from './pages';
 
 function App() {
+  const location = useLocation();
+
   return (
     <div>
-      <BrowserRouter>
-        <Navbar />
-        <Cursor />
-        <main className="px-4">
-          <Routes>
+      <Navbar />
+      <Cursor />
+      <main className="px-4">
+        <AnimatePresence initial={false}>
+          <Routes key={location.pathname} location={location}>
             <Route path="/" element={<WorkPage />} />
+            <Route path="/work/winter" element={<WorkPage />} />
           </Routes>
-        </main>
-      </BrowserRouter>
+        </AnimatePresence>
+      </main>
     </div>
   );
 }
