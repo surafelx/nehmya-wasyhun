@@ -35,10 +35,9 @@ const Navbar = () => {
             </Link>
           ) : (
             <MotionLink
-              initial={{ y: 0, opacity: 0 }}
               animate={{
-                y: scrollY > 190 ? -15 : 0,
-                opacity: scrollY > 190 ? 0 : 1,
+                y: scrollY > 190 && !isMenuOpen ? -15 : 0,
+                opacity: scrollY > 190 && !isMenuOpen ? 0 : 1,
               }}
               transition={{ duration: 0.3 }}
               to="/"

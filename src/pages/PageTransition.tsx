@@ -10,11 +10,24 @@ const PageTransition = ({ children, className }: PageTransitionProps) => {
   return (
     <motion.div
       className={className}
-      initial={{ x: '200%', opacity: 0, scale: 0.7, position: 'absolute' }}
-      animate={{ x: 0, scale: 1, opacity: 1, position: 'initial' }}
+      initial={{
+        x: '200%',
+        opacity: 0,
+        scale: 0.8,
+        position: 'absolute',
+      }}
+      animate={{
+        x: 0,
+        y: 0,
+        scale: 1,
+        opacity: 1,
+        position: 'initial',
+        transformOrigin: 'top',
+      }}
       exit={{
         x: '-200%',
-        scale: 0.7,
+        scale: 0.8,
+        transformOrigin: 'top',
         position: 'absolute',
         opacity: 0,
         transition: {
@@ -23,7 +36,7 @@ const PageTransition = ({ children, className }: PageTransitionProps) => {
           },
           opacity: {
             delay: 0.5,
-            duration: 1,
+            duration: 0.8,
           },
           x: {
             delay: 0.6,
