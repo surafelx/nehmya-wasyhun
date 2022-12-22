@@ -1,34 +1,69 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Menu from './Menu';
+import ArrowLeft from '../../assets/arrow-left.svg';
+import { motion } from 'framer-motion';
+import useScrollPosition from '../../hooks/useScrollPosition';
+
+const MotionLink = motion(Link);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const handleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const location = useLocation();
+  const scrollY = useScrollPosition();
+
+  const handleMenu = (state: boolean) => {
+    setIsMenuOpen(state);
   };
 
   return (
     <>
       <header className="fixed top-0 w-full z-50 mix-blend-difference">
-        <nav className="flex justify-between text-lg md:py-8 py-4 md:px-12 px-4">
-          <Link to="/" className="uppercase">
-            <div className="flex gap-4">
-              <span className="text-neutral-300 hover-link">Name Surname</span>
-              <span className="text-gray-500 md:block hidden hover-link">
-                Director of photography
-              </span>
-            </div>
-          </Link>
+        <motion.nav
+          initial={{ y: 0 }}
+          animate={{ y: isMenuOpen ? 15 : 0 }}
+          className="flex justify-between text-lg md:py-8 py-4 md:px-12 px-6"
+        >
+          {location.pathname.includes('/work/') ? (
+            <Link
+              to="/"
+              className="flex uppercase"
+              onClick={() => handleMenu(false)}
+            >
+              <img src={ArrowLeft} className="hover-link" />
+              <span className="hover-link">Back</span>
+            </Link>
+          ) : (
+            <MotionLink
+              initial={{ y: 0, opacity: 0 }}
+              animate={{
+                y: scrollY > 190 ? -15 : 0,
+                opacity: scrollY > 190 ? 0 : 1,
+              }}
+              transition={{ duration: 0.3 }}
+              to="/"
+              className="uppercase"
+              onClick={() => handleMenu(false)}
+            >
+              <div className="flex gap-4">
+                <span className="text-neutral-300 hover-link">
+                  Name Surname
+                </span>
+                <span className="text-gray-500 md:block hidden hover-link">
+                  Director of photography
+                </span>
+              </div>
+            </MotionLink>
+          )}
           <button
-            onClick={handleMenu}
+            onClick={() => handleMenu(!isMenuOpen)}
             className={`strike-hover hover-link before:bg-primary ${
               isMenuOpen ? 'active' : ''
             }`}
           >
             MENU
           </button>
-        </nav>
+        </motion.nav>
       </header>
       <Menu
         isOpen={isMenuOpen}

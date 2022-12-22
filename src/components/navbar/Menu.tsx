@@ -118,6 +118,7 @@ const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
           <div className="flex gap-3 justify-around md:flex-none flex-1">
             {links.map((link) => (
               <a
+                key={link.name}
                 href={link.href}
                 tabIndex={isOpen ? 0 : -1}
                 className="uppercase strike-hover hover-link"
