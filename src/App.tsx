@@ -1,4 +1,4 @@
-import { Cursor, Loader, Navbar } from './components';
+import { Cursor, Footer, Loader, Navbar } from './components';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { WorkPage } from './pages';
@@ -20,13 +20,13 @@ function App() {
       </AnimatePresence>
       <Navbar />
       <Cursor />
-      <main>
+      <main id="main" className="overflow-y-auto overflow-x-hidden h-screen">
         <AnimatePresence initial={false}>
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<WorkPage />} />
-            <Route path="/work/winter" element={<WorkPage />} />
           </Routes>
         </AnimatePresence>
+        <Footer />
       </main>
     </div>
   );

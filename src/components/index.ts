@@ -3,3 +3,4 @@ export { default as Cursor } from './cursor/Cursor';
 export { default as ImageBlock } from './collection/ImageBlock';
 export { default as Sortbar } from './sortbar/Sortbar';
 export { default as Loader } from './loader/Loader';
+export { default as Footer } from './footer/Footer';
