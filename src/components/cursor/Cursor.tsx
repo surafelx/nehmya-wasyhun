@@ -62,7 +62,7 @@ const Cursor = () => {
 
   return (
     <motion.div
-      className="mix-blend-difference fixed z-50 pointer-events-none"
+      className="mix-blend-difference fixed z-[100] pointer-events-none"
       animate={{ x: cursorPos.x - 3, y: cursorPos.y - 3 }}
       transition={{ duration: 0.02 }}
     >

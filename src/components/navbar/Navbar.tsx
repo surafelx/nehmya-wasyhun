@@ -22,7 +22,7 @@ const Navbar = () => {
         <motion.nav
           initial={{ y: 0 }}
           animate={{ y: isMenuOpen ? 15 : 0 }}
-          className="flex justify-between text-lg md:py-8 py-4 md:px-12 px-6"
+          className="flex justify-between text-lg md:py-8 py-4 md:px-12 pl-6 pr-8"
         >
           {location.pathname.includes('/work/') ? (
             <Link
@@ -66,7 +66,7 @@ const Navbar = () => {
       </header>
       <Menu
         isOpen={isMenuOpen}
-        setIsOpen={(state: boolean) => setIsMenuOpen(state)}
+        setIsOpen={(state: boolean) => handleMenu(state)}
       />
     </>
   );
