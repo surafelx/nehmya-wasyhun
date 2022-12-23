@@ -1,17 +1,26 @@
 import { useEffect, useState } from 'react';
 
 const useScrollPosition = () => {
+  const main = document.getElementById('main');
   const [scrollPosY, setScrollPosY] = useState(0);
 
   const onScroll = () => {
-    setScrollPosY(window.scrollY);
+    if (!main) {
+      return;
+    }
+
+    setScrollPosY(main.scrollTop);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll);
+    if (!main) {
+      return;
+    }
 
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+    main.addEventListener('scroll', onScroll);
+
+    return () => main.removeEventListener('scroll', onScroll);
+  }, [main]);
 
   return scrollPosY;
 };
