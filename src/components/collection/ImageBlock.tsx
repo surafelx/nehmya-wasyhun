@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 interface ImageBlockProps {
@@ -10,13 +11,16 @@ interface ImageBlockProps {
 const ImageBlock = ({ path, img, label, className }: ImageBlockProps) => {
   return (
     <Link to={path} className={className}>
-      <div className="relative rounded-xl overflow-hidden">
+      <div className="relative">
         <div className="w-full h-full absolute md:p-8 p-4 mix-blend-difference hover-image">
-          <h2 className="uppercase md:text-base text-sm hover-image">
+          <motion.h2 className="uppercase md:text-base text-sm hover-image sticky md:top-8 top-5">
             {label}
-          </h2>
+          </motion.h2>
         </div>
-        <img src={img} className="w-full h-full max-h-[600px] object-cover" />
+        <img
+          src={img}
+          className="w-full h-full max-h-[600px] object-cover rounded-xl"
+        />
       </div>
     </Link>
   );

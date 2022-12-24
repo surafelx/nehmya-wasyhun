@@ -20,7 +20,10 @@ function App() {
       </AnimatePresence>
       <Navbar />
       <Cursor />
-      <main id="main" className="overflow-y-auto overflow-x-hidden h-screen">
+      <main
+        id="main"
+        className="overflow-y-auto overflow-x-hidden h-screen scroll-smooth"
+      >
         <AnimatePresence initial={false}>
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<WorkPage />} />
