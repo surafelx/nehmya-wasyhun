@@ -28,4 +28,8 @@ body {
   .gallery-item {
     @apply w-full h-full opacity-50 [&.active]:opacity-100 hover:opacity-100 transition-opacity duration-500;
   }
+
+  .work-section {
+    @apply md:px-14 px-8 max-w-[1200px] mx-auto;
+  }
 }

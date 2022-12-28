@@ -1,16 +1,14 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import useWindowWidth from '../../hooks/useWindowWidth';
-import { DragControls, motion } from 'framer-motion';
+import { useLayoutEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
-interface GalleryInterface {
+interface GalleryProps {
   imgs: string[];
 }
 
-const Gallery = ({ imgs }: GalleryInterface) => {
+const Gallery = ({ imgs }: GalleryProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentImg, setCurrentImg] = useState(0);
   const [carouselHeight, setCarouselHeight] = useState<number>(0);
-  // const windowWidth = useWindowWidth();
 
   useLayoutEffect(() => {
     if (carouselRef.current) {
@@ -41,9 +39,14 @@ const Gallery = ({ imgs }: GalleryInterface) => {
               <button
                 key={i}
                 onClick={() => setCurrentImg(i)}
-                className={`gallery-item ${currentImg === i ? 'active' : ''}`}
+                className={`gallery-item hover-link ${
+                  currentImg === i ? 'active' : ''
+                }`}
               >
-                <img src={img} className="rounded-xl pointer-events-none" />
+                <img
+                  src={img}
+                  className="rounded-xl pointer-events-none hover-link"
+                />
               </button>
             ))}
           </motion.div>

@@ -5,4 +5,5 @@ export { default as Sortbar } from './sortbar/Sortbar';
 export { default as Loader } from './loader/Loader';
 export { default as Footer } from './footer/Footer';
 export { default as Gallery } from './gallery/Gallery';
+export { default as MobileGallery } from './gallery/MobileGallery';
 export { default as List } from './list/List';
