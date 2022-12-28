@@ -24,4 +24,8 @@ body {
     before:pointer-events-none hover:before:scale-x-100 hover:before:origin-left
     [&.active]:before:scale-x-100;
   }
+
+  .gallery-item {
+    @apply w-full h-full opacity-50 [&.active]:opacity-100 hover:opacity-100 transition-opacity duration-500;
+  }
 }
