@@ -15,7 +15,6 @@ const Loader = ({ isLoading, setIsLoading }: LoaderProps) => {
     const intervalId = setInterval(() => {
       if (counter >= 100) {
         setIsLoading(false);
-        document.body.style.overflowY = '';
         clearInterval(intervalId);
       }
       counter += 2;
@@ -24,7 +23,6 @@ const Loader = ({ isLoading, setIsLoading }: LoaderProps) => {
   };
 
   useEffect(() => {
-    document.body.style.overflowY = 'hidden';
     window.addEventListener('load', handleLoad);
 
     return () => window.removeEventListener('load', handleLoad);

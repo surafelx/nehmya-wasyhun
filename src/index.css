@@ -32,4 +32,8 @@ body {
   .work-section {
     @apply md:px-14 px-8 max-w-[1200px] mx-auto;
   }
+
+  .about-section {
+    @apply md:px-14 px-3 max-w-[1200px] mx-auto;
+  }
 }

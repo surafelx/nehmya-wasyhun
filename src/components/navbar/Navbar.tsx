@@ -22,7 +22,7 @@ const Navbar = () => {
         <motion.nav
           initial={{ y: 0 }}
           animate={{ y: isMenuOpen ? 15 : 0 }}
-          className="flex justify-between text-lg md:py-8 py-4 md:px-12 pl-6 pr-12"
+          className="flex justify-between text-lg md:py-8 py-4 md:px-12 pl-6 md:pr-12 pr-8"
         >
           {location.pathname.includes('/work/') ? (
             <Link
