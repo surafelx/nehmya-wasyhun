@@ -1,8 +1,9 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import useDeviceType from '../../hooks/useDeviceType';
 
 interface HomeCarouselProps {
   imgs: string[];
@@ -11,6 +12,7 @@ interface HomeCarouselProps {
 const HomeCarousel = ({ imgs }: HomeCarouselProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [currentImg, setCurrentImg] = useState(0);
+  const deviceType = useDeviceType();
 
   return (
     <div>
@@ -29,39 +31,41 @@ const HomeCarousel = ({ imgs }: HomeCarouselProps) => {
           }
         }}
       >
-        {imgs.map((img) => (
-          <SwiperSlide className="w-full">
+        {imgs.map((img, i) => (
+          <SwiperSlide key={i} className="w-full">
             <Link to="/work">
               <img
                 src={img}
-                className="rounded-xl md:w-full md:max-h-[75vh] h-[70vh] object-cover hover-image"
+                className="rounded-xl md:w-full md:max-h-[75vh] h-[75vh] object-cover hover-image"
               />
             </Link>
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex gap-4 items-center">
-        <button
-          className="hover-link"
-          onClick={() => swiperRef.current?.slidePrev()}
-        >
-          PREVIOUS
-        </button>
-        <div className="flex gap-2">
-          {imgs.map((img, i) => (
-            <span
-              key={i}
-              className={`carousel-step ${i === currentImg ? 'active' : ''}`}
-            ></span>
-          ))}
+      {deviceType === 'desktop' ? (
+        <div className="flex gap-4 items-center">
+          <button
+            className="hover-link"
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            PREVIOUS
+          </button>
+          <div className="flex gap-2">
+            {imgs.map((img, i) => (
+              <span
+                key={i}
+                className={`carousel-step ${i === currentImg ? 'active' : ''}`}
+              ></span>
+            ))}
+          </div>
+          <button
+            className="hover-link"
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            NEXT
+          </button>
         </div>
-        <button
-          className="hover-link"
-          onClick={() => swiperRef.current?.slideNext()}
-        >
-          NEXT
-        </button>
-      </div>
+      ) : null}
     </div>
   );
 };
