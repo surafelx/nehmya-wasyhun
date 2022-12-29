@@ -9,8 +9,8 @@ module.exports = {
         'secondary-black': '#050709',
       },
       animation: {
-        marquee: 'marquee 5s linear infinite',
-        marquee2: 'marquee2 5s linear infinite',
+        marquee: 'marquee 20s linear infinite',
+        marquee2: 'marquee2 20s linear infinite',
       },
       keyframes: {
         marquee: {
