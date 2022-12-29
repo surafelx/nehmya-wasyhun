@@ -36,4 +36,8 @@ body {
   .about-section {
     @apply md:px-14 px-3 max-w-[1200px] mx-auto;
   }
+
+  .carousel-step {
+    @apply w-[0.125rem] h-5 bg-gray-600 block [&.active]:bg-white;
+  }
 }

@@ -6,4 +6,5 @@ export { default as Loader } from './loader/Loader';
 export { default as Footer } from './footer/Footer';
 export { default as Gallery } from './gallery/Gallery';
 export { default as MobileGallery } from './gallery/MobileGallery';
+export { default as HomeCarousel } from './gallery/HomeCarousel';
 export { default as List } from './list/List';

@@ -12,11 +12,7 @@ const MobileGallery = ({ imgs }: MobileGalleryProps) => {
   useLayoutEffect(() => {
     if (carouselRef.current) {
       setCarouselWidth(
-        carouselRef.current?.scrollWidth - carouselRef.current?.offsetWidth,
-      );
-      console.log(
-        carouselRef.current?.scrollWidth,
-        carouselRef.current?.offsetWidth,
+        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth,
       );
     }
   }, [imgs]);
