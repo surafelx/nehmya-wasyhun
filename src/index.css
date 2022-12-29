@@ -14,7 +14,7 @@ body {
 
 @layer base {
   html {
-    @apply text-primary bg-secondary-black;
+    @apply text-primary;
   }
 
   .strike-hover {

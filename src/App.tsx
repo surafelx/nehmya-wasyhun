@@ -1,6 +1,6 @@
 import { Cursor, Footer, Loader, Navbar } from './components';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { AboutPage, WorkPage, WorkShowcase } from './pages';
 import { useState } from 'react';
 
@@ -20,7 +20,14 @@ function App() {
       </AnimatePresence>
       <Navbar />
       <Cursor />
-      <main
+      <motion.main
+        animate={{
+          backgroundColor: location.pathname === '/about' ? '#FFF' : '#000',
+        }}
+        transition={{
+          delay: 0.6,
+          duration: 0.3,
+        }}
         id="main"
         className="overflow-y-auto overflow-x-hidden h-screen scroll-smooth"
       >
@@ -32,7 +39,7 @@ function App() {
           </Routes>
         </AnimatePresence>
         <Footer />
-      </main>
+      </motion.main>
     </div>
   );
 }

@@ -46,7 +46,7 @@ const Navbar = () => {
             >
               <div className="flex gap-4">
                 <span className="text-neutral-300 hover-link">
-                  Name Surname
+                  RAPHAËL BOURDIN
                 </span>
                 <span className="text-gray-500 md:block hidden hover-link">
                   Director of photography

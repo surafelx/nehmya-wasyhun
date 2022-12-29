@@ -10,6 +10,7 @@ const PageTransition = ({ children, className }: PageTransitionProps) => {
   return (
     <motion.div
       className={className}
+      style={{ transformOrigin: 'top' }}
       initial={{
         x: '200%',
         opacity: 0,
@@ -22,12 +23,10 @@ const PageTransition = ({ children, className }: PageTransitionProps) => {
         scale: 1,
         opacity: 1,
         position: 'initial',
-        transformOrigin: 'top',
       }}
       exit={{
         x: '-200%',
         scale: 0.8,
-        transformOrigin: 'top',
         position: 'absolute',
         opacity: 0,
         transition: {
