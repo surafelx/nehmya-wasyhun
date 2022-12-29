@@ -1,4 +1,4 @@
-import { ImageBlock, Sortbar } from '../components';
+import { Footer, ImageBlock, Sortbar } from '../components';
 import Winter from '../assets/winter.webp';
 import PageTransition from './PageTransition';
 const WorkPage = () => {
@@ -58,6 +58,7 @@ const WorkPage = () => {
         ))}
       </section>
       <Sortbar />
+      <Footer />
     </PageTransition>
   );
 };

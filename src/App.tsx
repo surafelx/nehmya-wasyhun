@@ -1,4 +1,4 @@
-import { Cursor, Footer, Loader, Navbar } from './components';
+import { Cursor, Loader, Navbar } from './components';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AboutPage, HomePage, WorkPage, WorkShowcase } from './pages';
@@ -39,7 +39,6 @@ function App() {
             <Route path="/work/:name" element={<WorkShowcase />} />
           </Routes>
         </AnimatePresence>
-        <Footer />
       </motion.main>
     </div>
   );

@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { Gallery, List, MobileGallery } from '../components';
+import { Footer, Gallery, List, MobileGallery } from '../components';
 import { motion, useInView } from 'framer-motion';
 import PageTransition from './PageTransition';
 import Winter from '../assets/winter.webp';
@@ -77,7 +77,7 @@ const WorkShowcase = () => {
   ];
 
   return (
-    <PageTransition className="py-20">
+    <PageTransition className="pt-20">
       <section className="md:pl-14 px-8">
         {deviceType !== 'desktop' ? (
           <img src={imgs[0]} className="rounded-xl" />
@@ -124,6 +124,7 @@ const WorkShowcase = () => {
           <List items={section.listItems} />
         </section>
       ))}
+      <Footer />
     </PageTransition>
   );
 };

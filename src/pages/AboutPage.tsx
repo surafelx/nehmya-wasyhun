@@ -1,6 +1,7 @@
 import PageTransition from './PageTransition';
 import Winter from '../assets/winter.webp';
 import ArrowBottom from '../assets/arrow-bottom.svg';
+import { Footer } from '../components';
 
 const AboutPage = () => {
   const references = [
@@ -12,10 +13,10 @@ const AboutPage = () => {
   ];
 
   return (
-    <PageTransition className=" px-4 py-4 ">
+    <PageTransition className=" px-4 py-4 text-black">
       <section className="h-[96vh] relative">
         <img src={Winter} className="w-full h-full object-cover rounded-xl" />
-        <div className="absolute w-full h-full top-0 lg:p-12 md:p-8 p-4 flex flex-row mix-blend-difference items-end justify-between">
+        <div className="absolute w-full h-full top-0 lg:p-12 md:p-8 p-4 flex flex-row text-white mix-blend-difference items-end justify-between">
           <h1 className="md:text-7xl text-5xl">RAPHAËL BOURDIN</h1>
           <a href="#me">
             <img src={ArrowBottom} className="scale-[2] hover-link" />
@@ -24,7 +25,7 @@ const AboutPage = () => {
       </section>
       <section
         id="me"
-        className="px-4 md:py-28 py-14 text-black md:text-3xl text-xl about-section flex flex-col gap-14 uppercase"
+        className="px-4 md:py-28 py-14 md:text-3xl text-xl about-section flex flex-col gap-14 uppercase"
       >
         <div className="flex">
           <p className="md:w-1/2">
@@ -40,7 +41,7 @@ const AboutPage = () => {
           </p>
         </div>
       </section>
-      <section className="uppercase about-section text-black">
+      <section className="uppercase about-section">
         <h2 className="md:text-5xl text-3xl mb-8">References</h2>
         <ul className="uppercase">
           {references.map((item) => (
@@ -54,7 +55,7 @@ const AboutPage = () => {
           ))}
         </ul>
       </section>
-      <section className="md:px-14 px-3 pt-20 pb-5 text-black">
+      <section className="md:px-14 px-3 pt-20 pb-5">
         <a
           href="mailto:"
           className="relative flex uppercase md:text-8xl text-5xl"
@@ -75,6 +76,7 @@ const AboutPage = () => {
           </div>
         </a>
       </section>
+      <Footer />
     </PageTransition>
   );
 };
