@@ -4,21 +4,34 @@ import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import useDeviceType from '../../hooks/useDeviceType';
+import { Album } from '../../interfaces';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface HomeCarouselProps {
-  imgs: string[];
+  albums: Album[];
 }
 
-const HomeCarousel = ({ imgs }: HomeCarouselProps) => {
+const HomeCarousel = ({ albums }: HomeCarouselProps) => {
   const swiperRef = useRef<SwiperType | null>(null);
-  const [currentImg, setCurrentImg] = useState(0);
+  const [currentAlbum, setCurrentAlbum] = useState(0);
   const deviceType = useDeviceType();
 
   return (
     <div>
-      <h2 className="uppercase font-thin text-center">Title</h2>
+      <AnimatePresence mode="wait">
+        <motion.h2
+          key={currentAlbum}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="uppercase font-thin text-center"
+        >
+          {albums[currentAlbum].name}
+        </motion.h2>
+      </AnimatePresence>
       <Swiper
-        className="md:my-4 my-2 mx-0 w-full overflow-visible md:max-w-[94%] max-w-[88%]"
+        className="md:my-4 my-2 w-full overflow-visible"
         onBeforeInit={(swiper) => {
           swiperRef.current = swiper;
         }}
@@ -27,15 +40,15 @@ const HomeCarousel = ({ imgs }: HomeCarouselProps) => {
         slidesPerView={1}
         onSlideChange={() => {
           if (swiperRef.current) {
-            setCurrentImg(swiperRef.current.activeIndex);
+            setCurrentAlbum(swiperRef.current.activeIndex);
           }
         }}
       >
-        {imgs.map((img, i) => (
+        {albums.map((album, i) => (
           <SwiperSlide key={i} className="w-full">
-            <Link to="/work">
+            <Link to={`/work/${album.key}`}>
               <img
-                src={img}
+                src={album.images[0]}
                 className="rounded-xl md:w-full md:max-h-[75vh] h-[75vh] object-cover hover-image"
               />
             </Link>
@@ -51,10 +64,12 @@ const HomeCarousel = ({ imgs }: HomeCarouselProps) => {
             PREVIOUS
           </button>
           <div className="flex gap-2">
-            {imgs.map((img, i) => (
+            {albums.map((albums, i) => (
               <span
                 key={i}
-                className={`carousel-step ${i === currentImg ? 'active' : ''}`}
+                className={`carousel-step ${
+                  i === currentAlbum ? 'active' : ''
+                }`}
               ></span>
             ))}
           </div>

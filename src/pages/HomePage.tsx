@@ -1,13 +1,13 @@
 import { HomeCarousel } from '../components';
 import PageTransition from './PageTransition';
-import Women from '../assets/women.webp';
 import ArrowDiagonal from '../assets/arrow-diagonal.svg';
 import { Link } from 'react-router-dom';
+import albums from '../data/albums.json';
 
 const HomePage = () => {
   return (
     <PageTransition className="md:px-14 px-4 md:py-20 py-12 w-full h-full">
-      <HomeCarousel imgs={[Women, Women, Women]} />
+      <HomeCarousel albums={albums} />
       <Link
         to="/work"
         className="flex items-center gap-4 fixed right-0 bottom-0 w-full md:justify-end justify-center md:px-14 py-4 z-10 hover-link"
