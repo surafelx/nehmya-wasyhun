@@ -12,22 +12,19 @@ const PageTransition = ({ children, className }: PageTransitionProps) => {
       className={className}
       style={{ transformOrigin: 'top' }}
       initial={{
-        x: '200%',
+        x: '150%',
         opacity: 0,
         scale: 0.8,
-        position: 'absolute',
       }}
       animate={{
         x: 0,
         y: 0,
         scale: 1,
         opacity: 1,
-        position: 'initial',
       }}
       exit={{
-        x: '-200%',
+        x: '-150%',
         scale: 0.8,
-        position: 'absolute',
         opacity: 0,
         transition: {
           scale: {
@@ -45,15 +42,14 @@ const PageTransition = ({ children, className }: PageTransitionProps) => {
       }}
       transition={{
         opacity: {
-          delay: 0.5,
+          delay: 0.2,
           duration: 1,
         },
         x: {
-          delay: 0.4,
-          duration: 0.7,
+          duration: 0.8,
         },
         scale: {
-          delay: 1.2,
+          delay: 1,
           duration: 0.5,
         },
       }}

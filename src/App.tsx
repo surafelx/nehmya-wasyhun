@@ -31,12 +31,12 @@ function App() {
         id="main"
         className="overflow-y-auto overflow-x-hidden h-screen scroll-smooth"
       >
-        <AnimatePresence initial={false}>
+        <AnimatePresence initial={false} mode="wait">
           <Routes key={location.pathname} location={location}>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/work" element={<WorkPage />} />
-            <Route path="/work/:name" element={<WorkShowcase />} />
+            <Route path="/work/:key" element={<WorkShowcase />} />
           </Routes>
         </AnimatePresence>
       </motion.main>
