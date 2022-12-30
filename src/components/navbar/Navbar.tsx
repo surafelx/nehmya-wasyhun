@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Menu from './Menu';
 import ArrowLeft from '../../assets/arrow-left.svg';
 import { motion } from 'framer-motion';
@@ -9,6 +9,7 @@ const MotionLink = motion(Link);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const location = useLocation();
   const scrollY = useScrollPosition();
 
@@ -25,14 +26,16 @@ const Navbar = () => {
           className="flex justify-between text-lg md:py-8 py-4 md:px-12 pl-6 md:pr-12 pr-8"
         >
           {location.pathname.includes('/work/') ? (
-            <Link
-              to="/"
+            <button
               className="flex uppercase"
-              onClick={() => handleMenu(false)}
+              onClick={() => {
+                navigate(-1);
+                handleMenu(false);
+              }}
             >
               <img src={ArrowLeft} className="hover-link" />
               <span className="hover-link">Back</span>
-            </Link>
+            </button>
           ) : (
             <MotionLink
               animate={{

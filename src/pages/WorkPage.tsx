@@ -1,63 +1,58 @@
 import { Footer, ImageBlock, Sortbar } from '../components';
-import Winter from '../assets/winter.webp';
 import PageTransition from './PageTransition';
+import albumsData from '../data/albums.json';
+import { useState } from 'react';
+import { Album } from '../interfaces';
+
 const WorkPage = () => {
-  const images = [
-    {
-      path: '/work/winter',
-      img: Winter,
-      label: 'Winter1',
-      className: 'col-span-6',
-    },
-    {
-      path: '/work/winter',
-      img: Winter,
-      label: 'Winter2',
-      className: 'col-span-6',
-    },
-    {
-      path: '/work/winter',
-      img: Winter,
-      label: 'Winter3',
-      className: 'col-span-12',
-    },
-    {
-      path: '/work/winter',
-      img: Winter,
-      label: 'Winter4',
-      className: 'col-span-4',
-    },
-    {
-      path: '/work/winter',
-      img: Winter,
-      label: 'Winter5',
-      className: 'col-span-4',
-    },
-    {
-      path: '/work/winter',
-      img: Winter,
-      label: 'Winter6',
-      className: 'col-span-4',
-    },
-  ];
+  const [sortOption, setSortOption] = useState('all');
+  const [albums, setAlbums] = useState(albumsData);
+
+  let sortedAlbums: Album[] = [];
+
+  if (sortOption.toLowerCase() === 'all') {
+    sortedAlbums = albums;
+  } else {
+    sortedAlbums = albums.filter(
+      (album) => album.tag.toLowerCase() === sortOption.toLowerCase(),
+    );
+  }
+
+  const tags = albums.map((album) => album.tag.toLowerCase());
 
   return (
     <PageTransition className="pt-20 px-4">
       <h1 className="uppercase md:text-8xl text-4xl md:px-8 px-2 md:my-16 mb-8">
-        All work
+        {sortOption === 'all' ? 'All work' : sortOption}
       </h1>
-      <section className="md:grid flex flex-col md:grid-cols-12 grid-cols-1 gap-4">
-        {images.map((image) => (
-          <ImageBlock
-            key={image.label}
-            path={image.path}
-            img={image.img}
-            label={image.label}
-            className={image.className}
-          />
-        ))}
+      <section className="md:grid flex flex-col md:grid-cols-12 grid-cols-1 gap-4 ">
+        {sortedAlbums.map((album, i) => {
+          let colSpan = '';
+
+          if (i % 6 < 2) {
+            colSpan = 'col-span-6';
+          } else if (i % 6 === 2) {
+            colSpan = 'col-span-12';
+          } else {
+            colSpan = 'col-span-4';
+          }
+
+          return (
+            <ImageBlock
+              key={album.key + i}
+              path={`/work/${album.key}`}
+              img={album.images[0]}
+              label={album.name}
+              className={colSpan}
+            />
+          );
+        })}
       </section>
-      <Sortbar />
+      <Sortbar
+        options={[...new Set(['all', ...tags])]}
+        currentOption={sortOption}
+        setCurrentOption={(option: string) => setSortOption(option)}
+      />
       <Footer />
     </PageTransition>
   );
