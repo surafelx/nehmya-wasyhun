@@ -1,0 +1,75 @@
+[
+  {
+    "key": "mountains",
+    "name": "Mountains",
+    "tag": "Wild Nature",
+    "images": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80",
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    ],
+    "specs": {
+      "aspect": "Wild1",
+      "format": "Wild1",
+      "camera": "Wild1",
+      "lenses": "Wild1"
+    },
+    "credits": {
+      "direc": "Wild1",
+      "photoDirec": "Wild1",
+      "colorist": "Wild1",
+      "prod": "Wild1",
+      "postProd": "Wild1"
+    }
+  },
+  {
+    "key": "oceans",
+    "name": "Oceans",
+    "tag": "Wild Nature",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80"
+    ],
+    "specs": {},
+    "credits": {}
+  },
+  {
+    "key": "winter",
+    "name": "Winter",
+    "tag": "Wild Nature",
+    "images": [
+      "https://images.unsplash.com/photo-1581196607303-95c00f31c676?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=1080"
+    ],
+    "specs": {},
+    "credits": {}
+  },
+  {
+    "key": "urban-life",
+    "name": "Urban life",
+    "tag": "People",
+    "images": [
+      "https://images.unsplash.com/photo-1517732306149-e8f829eb588a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+    ],
+    "specs": {},
+    "credits": {}
+  },
+  {
+    "key": "new-york",
+    "name": "New York",
+    "tag": "Cities",
+    "images": [
+      "https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+    ],
+    "specs": {},
+    "credits": {}
+  },
+  {
+    "key": "warsaw",
+    "name": "Warsaw",
+    "tag": "Cities",
+    "images": [
+      "https://images.unsplash.com/photo-1519197924294-4ba991a11128?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80"
+    ],
+    "specs": {},
+    "credits": {}
+  }
+]

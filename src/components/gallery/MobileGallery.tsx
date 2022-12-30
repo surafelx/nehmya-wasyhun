@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useLayoutEffect, useRef, useState } from 'react';
 
 interface MobileGalleryProps {
-  imgs: string[];
+  imgs?: string[];
 }
 
 const MobileGallery = ({ imgs }: MobileGalleryProps) => {
@@ -16,6 +16,10 @@ const MobileGallery = ({ imgs }: MobileGalleryProps) => {
       );
     }
   }, [imgs]);
+
+  if (!imgs) {
+    return <></>;
+  }
 
   return (
     <div>

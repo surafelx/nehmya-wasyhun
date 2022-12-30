@@ -1,8 +1,8 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 interface GalleryProps {
-  imgs: string[];
+  imgs?: string[];
 }
 
 const Gallery = ({ imgs }: GalleryProps) => {
@@ -18,15 +18,28 @@ const Gallery = ({ imgs }: GalleryProps) => {
     }
   }, [imgs]);
 
+  if (!imgs) {
+    return <></>;
+  }
+
   return (
     <div className="w-full">
       <div className="h-full max-h-[700px] flex gap-4 justify-between md:flex-row flex-col">
-        <div className="w-full">
-          <img
-            src={imgs[currentImg]}
-            className="w-full h-full rounded-xl object-cover"
-          />
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentImg}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            className="w-full"
+          >
+            <img
+              src={imgs[currentImg]}
+              className="h-full w-full rounded-xl object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
         <div className="overflow-hidden rounded-xl">
           <motion.div
             drag="y"
@@ -45,7 +58,7 @@ const Gallery = ({ imgs }: GalleryProps) => {
               >
                 <img
                   src={img}
-                  className="rounded-xl pointer-events-none hover-link"
+                  className="rounded-xl pointer-events-none hover-link md:max-h-max max-h-[100px]"
                 />
               </button>
             ))}

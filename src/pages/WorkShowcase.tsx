@@ -2,30 +2,23 @@ import { useParams } from 'react-router-dom';
 import { Footer, Gallery, List, MobileGallery } from '../components';
 import { motion, useInView } from 'framer-motion';
 import PageTransition from './PageTransition';
-import Winter from '../assets/winter.webp';
-import Women from '../assets/women.webp';
 import ArrowBottom from '../assets/arrow-bottom.svg';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useDeviceType from '../hooks/useDeviceType';
+import albums from '../data/albums.json';
+import { Album } from '../interfaces';
 
 const WorkShowcase = () => {
+  const [album, setAlbum] = useState<Album | undefined>(undefined);
+  const params = useParams();
   const descRef = useRef<HTMLElement>(null);
   const descInView = useInView(descRef);
   const deviceType = useDeviceType();
-  const params = useParams();
 
-  const imgs = [
-    Women,
-    Winter,
-    Women,
-    Winter,
-    Women,
-    Winter,
-    Women,
-    Women,
-    Women,
-    Women,
-  ];
+  useEffect(() => {
+    const index = albums.findIndex((album) => params.key === album.key);
+    setAlbum(albums[index]);
+  }, []);
 
   const sections = [
     {
@@ -33,19 +26,19 @@ const WorkShowcase = () => {
       listItems: [
         {
           label: 'Aspect Ratio',
-          value: '2:35',
+          value: album?.specs.aspect || '-',
         },
         {
           label: 'Format',
-          value: 'Digital',
+          value: album?.specs.format || '-',
         },
         {
           label: 'Camera',
-          value: 'Placeholder',
+          value: album?.specs.camera || '-',
         },
         {
           label: 'Lenses',
-          value: 'Placeholder',
+          value: album?.specs.lenses || '-',
         },
       ],
     },
@@ -54,23 +47,23 @@ const WorkShowcase = () => {
       listItems: [
         {
           label: 'Director',
-          value: 'Placeholder',
+          value: album?.credits.direc || '-',
         },
         {
           label: 'Director of photography',
-          value: 'Placeholder',
+          value: album?.credits.photoDirec || '-',
         },
         {
           label: 'Colorist',
-          value: 'Placeholder',
+          value: album?.credits.colorist || '-',
         },
         {
           label: 'Production',
-          value: 'Placeholder',
+          value: album?.credits.prod || '-',
         },
         {
           label: 'Post Production',
-          value: 'Placeholder',
+          value: album?.credits.postProd || '-',
         },
       ],
     },
@@ -80,9 +73,13 @@ const WorkShowcase = () => {
     <PageTransition className="pt-20">
       <section className="md:pl-14 px-8">
         {deviceType !== 'desktop' ? (
-          <img src={imgs[0]} className="rounded-xl" />
+          <img
+            src={album?.images[0]}
+            alt={album?.name}
+            className="rounded-xl"
+          />
         ) : (
-          <Gallery imgs={imgs} />
+          <Gallery imgs={album?.images} />
         )}
         <motion.div
           className="md:py-20 py-6 font-thin uppercase text-sm flex justify-between"
@@ -92,8 +89,8 @@ const WorkShowcase = () => {
           transition={{ duration: 0.3 }}
         >
           <div className="flex gap-4">
-            <span>{params.name?.toString()}</span>
-            <span className="text-gray-500">tagtagtag</span>
+            <span>{album?.name}</span>
+            <span className="text-gray-500">{album?.tag}</span>
           </div>
           <a href="#desc" tabIndex={descInView ? -1 : 0}>
             <img src={ArrowBottom} className="scale-[1.8] hover-link" />
@@ -105,15 +102,15 @@ const WorkShowcase = () => {
         ref={descRef}
         className="uppercase md:mb-52 mb-28 work-section"
       >
-        <span className="text-gray-500 text-xl">tagtagtag</span>
-        <h1 className="md:text-7xl text-3xl">KALASH FEAT DAMSO - MALPOLIS</h1>
+        <span className="text-gray-500 text-xl">{album?.tag}</span>
+        <h1 className="md:text-7xl text-3xl">{album?.name}</h1>
       </section>
       {deviceType !== 'desktop' ? (
         <section className="md:px-14 px-8">
           <h2 className="uppercase md:text-5xl text-3xl md:mb-14 mb-4 mt-20">
             Gallery
           </h2>
-          <MobileGallery imgs={imgs.slice(1)} />
+          <MobileGallery imgs={album?.images.slice(1)} />
         </section>
       ) : null}
       {sections.map((section) => (
