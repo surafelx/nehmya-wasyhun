@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import ArrowLeft from '../../assets/arrow-left.svg';
 import useWindowWidth from '../../hooks/useWindowWidth';
 
@@ -19,8 +20,13 @@ const Sortbar = ({
 
   return (
     <motion.div
-      layout
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 1, duration: 0.2 },
+      }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
       className="md:w-[550px] w-3/4 fixed bg-primary left-1/2 -translate-x-1/2 z-40 rounded-full h-10 bottom-5 md:h-14 md:bottom-12"
     >
       {windowWidth <= 768 ? (

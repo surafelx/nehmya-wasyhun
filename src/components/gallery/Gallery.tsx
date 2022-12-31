@@ -58,7 +58,7 @@ const Gallery = ({ imgs }: GalleryProps) => {
               >
                 <img
                   src={img}
-                  className="rounded-xl pointer-events-none hover-link md:max-h-max max-h-[100px]"
+                  className="rounded-xl pointer-events-none hover-link md:max-h-max max-h-[100px] w-full object-cover"
                 />
               </button>
             ))}

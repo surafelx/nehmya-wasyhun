@@ -41,7 +41,7 @@ const Loader = ({ isLoading, setIsLoading }: LoaderProps) => {
         transition={{ duration: 0.2 }}
         className="h-full w-full flex flex-col justify-between md:text-7xl text-4xl"
       >
-        <span>NAME SURNAME</span>
+        <span>RAPHAËL BOURDIN</span>
         <span className="text-right">
           {('000' + progress.toString()).slice(-3)}%
         </span>
