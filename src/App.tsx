@@ -1,7 +1,7 @@
-import { Cursor, Loader, Navbar } from './components';
+import { Cursor, Loader, Navbar, Popup } from './components';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AboutPage, HomePage, WorkPage, WorkShowcase } from './pages';
+import { AboutPage, HomePage, NotFound, WorkPage, WorkShowcase } from './pages';
 import { useState } from 'react';
 
 function App() {
@@ -37,9 +37,11 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/work" element={<WorkPage />} />
             <Route path="/work/:key" element={<WorkShowcase />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </motion.main>
+      <Popup />
     </div>
   );
 }

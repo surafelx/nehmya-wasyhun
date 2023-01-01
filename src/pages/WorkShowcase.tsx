@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Footer, Gallery, List, MobileGallery } from '../components';
 import { motion, useInView } from 'framer-motion';
 import PageTransition from './PageTransition';
@@ -7,16 +7,23 @@ import { useEffect, useRef, useState } from 'react';
 import useDeviceType from '../hooks/useDeviceType';
 import albums from '../data/albums.json';
 import { Album } from '../interfaces';
+import NotFound from './NotFound';
 
 const WorkShowcase = () => {
   const [album, setAlbum] = useState<Album | undefined>(undefined);
   const params = useParams();
+  const deviceType = useDeviceType();
   const descRef = useRef<HTMLElement>(null);
   const descInView = useInView(descRef);
-  const deviceType = useDeviceType();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const index = albums.findIndex((album) => params.key === album.key);
+
+    if (index === -1) {
+      return navigate('/404');
+    }
+
     setAlbum(albums[index]);
   }, []);
 
@@ -38,6 +45,7 @@ const WorkShowcase = () => {
         },
         {
           label: 'Lenses',
+
           value: album?.specs.lenses || '-',
         },
       ],

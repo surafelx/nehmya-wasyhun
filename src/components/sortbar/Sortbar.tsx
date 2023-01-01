@@ -27,7 +27,7 @@ const Sortbar = ({
       }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2 }}
-      className="md:w-[550px] w-3/4 fixed bg-primary left-1/2 -translate-x-1/2 z-40 rounded-full h-10 bottom-5 md:h-14 md:bottom-12"
+      className="md:w-[550px] w-3/4 fixed bg-primary left-1/2 -translate-x-1/2 z-30 rounded-full h-10 bottom-5 md:h-14 md:bottom-12"
     >
       {windowWidth <= 768 ? (
         <>
