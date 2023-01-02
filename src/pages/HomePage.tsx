@@ -3,10 +3,14 @@ import PageTransition from './PageTransition';
 import ArrowDiagonal from '../assets/arrow-diagonal.svg';
 import { Link } from 'react-router-dom';
 import albums from '../data/albums.json';
+import { Helmet } from 'react-helmet';
 
 const HomePage = () => {
   return (
     <PageTransition className="md:px-14 px-4 md:py-20 py-12 w-full h-full">
+      <Helmet>
+        <title>PhotoPortfolio</title>
+      </Helmet>
       <HomeCarousel albums={albums} />
       <Link
         to="/work"

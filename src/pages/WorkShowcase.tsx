@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react';
 import useDeviceType from '../hooks/useDeviceType';
 import albums from '../data/albums.json';
 import { Album } from '../interfaces';
-import NotFound from './NotFound';
+import { Helmet } from 'react-helmet';
 
 const WorkShowcase = () => {
   const [album, setAlbum] = useState<Album | undefined>(undefined);
@@ -79,6 +79,9 @@ const WorkShowcase = () => {
 
   return (
     <PageTransition className="pt-20">
+      <Helmet>
+        <title>PhotoPortfolio{album ? ` - ${album.name}` : ''}</title>
+      </Helmet>
       <section className="md:pl-14 px-8">
         {deviceType !== 'desktop' ? (
           <img
@@ -90,7 +93,7 @@ const WorkShowcase = () => {
           <Gallery imgs={album?.images} />
         )}
         <motion.div
-          className="md:py-20 py-6 font-thin uppercase text-sm flex justify-between"
+          className="md:py-24 py-6 font-thin uppercase text-sm flex justify-between"
           animate={{
             opacity: descInView ? 0 : 1,
           }}

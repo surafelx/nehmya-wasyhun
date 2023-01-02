@@ -3,6 +3,7 @@ import PageTransition from './PageTransition';
 import albumsData from '../data/albums.json';
 import { useState } from 'react';
 import { Album } from '../interfaces';
+import { Helmet } from 'react-helmet';
 
 const WorkPage = () => {
   const [sortOption, setSortOption] = useState('all');
@@ -22,6 +23,9 @@ const WorkPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>PhotoPortfolio - All work</title>
+      </Helmet>
       <PageTransition className="pt-20 px-4">
         <h1 className="uppercase md:text-8xl text-4xl md:px-8 px-2 md:my-16 mb-8">
           {sortOption === 'all' ? 'All work' : sortOption}
