@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import Footer from './Footer';
 
 describe('Footer', () => {
-  it('Renders correctly', () => {
+  it('Should render correctly', () => {
     const { getAllByRole, getByText } = render(<Footer />);
 
     const links = getAllByRole('link') as HTMLAnchorElement[];

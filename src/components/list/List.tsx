@@ -1,12 +1,8 @@
-import React from 'react';
-
-interface Items {
-  label: string;
-  value: string;
-}
-
 interface ListProps {
-  items: Items[];
+  items: {
+    label: string;
+    value: string;
+  }[];
 }
 
 const List = ({ items }: ListProps) => {

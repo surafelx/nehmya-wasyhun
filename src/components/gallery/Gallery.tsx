@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 interface GalleryProps {
@@ -10,7 +10,7 @@ const Gallery = ({ imgs }: GalleryProps) => {
   const [currentImg, setCurrentImg] = useState(0);
   const [carouselHeight, setCarouselHeight] = useState<number>(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (carouselRef.current) {
       setCarouselHeight(
         carouselRef.current?.scrollHeight - carouselRef.current?.offsetHeight,
@@ -18,7 +18,7 @@ const Gallery = ({ imgs }: GalleryProps) => {
     }
   }, [imgs]);
 
-  console.log(carouselHeight);
+  // console.log(carouselHeight);
 
   return (
     <div className="w-full">
@@ -33,6 +33,7 @@ const Gallery = ({ imgs }: GalleryProps) => {
             className="w-full"
           >
             <img
+              data-testid="gallery-main-img"
               src={imgs && imgs[currentImg]}
               className="h-full w-full rounded-xl object-cover"
             />

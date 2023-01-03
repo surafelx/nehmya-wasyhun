@@ -10,7 +10,7 @@ describe('ImageBlock component', () => {
     img: '../assets/test-block-image',
   };
 
-  it('Renders correctly with props', () => {
+  it('Should render correctly with props', () => {
     const { getByText, getByRole } = render(<ImageBlock {...props} />, {
       wrapper: MemoryRouter,
     });
@@ -20,7 +20,7 @@ describe('ImageBlock component', () => {
     expect(getByRole('img')).toHaveAttribute('src', props.img);
   });
 
-  it('Renders with provided className', () => {
+  it('Should render with provided classNames', () => {
     const classNames = 'px-5 py-5';
 
     const { getByRole } = render(

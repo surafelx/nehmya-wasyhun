@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface MobileGalleryProps {
   imgs?: string[];
@@ -9,7 +9,7 @@ const MobileGallery = ({ imgs }: MobileGalleryProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [carouselWidth, setCarouselWidth] = useState<number>(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (carouselRef.current) {
       setCarouselWidth(
         carouselRef.current.scrollWidth - carouselRef.current.offsetWidth,

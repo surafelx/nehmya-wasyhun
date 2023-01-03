@@ -3,7 +3,7 @@ import { fireEvent, render } from '@testing-library/react';
 import Cursor from './Cursor';
 
 describe('Cursor component', () => {
-  it('Renders cursor correctly', () => {
+  it('Should render correctly', () => {
     const { getByTestId } = render(<Cursor />);
 
     expect(getByTestId('cursor')).toBeInTheDocument();
