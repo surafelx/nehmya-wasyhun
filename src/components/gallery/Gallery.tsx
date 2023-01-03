@@ -18,6 +18,8 @@ const Gallery = ({ imgs }: GalleryProps) => {
     }
   }, [imgs]);
 
+  console.log(carouselHeight);
+
   return (
     <div className="w-full">
       <div className="h-full max-h-[700px] flex gap-4 justify-between md:flex-row flex-col">

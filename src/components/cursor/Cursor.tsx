@@ -62,6 +62,7 @@ const Cursor = () => {
 
   return (
     <motion.div
+      data-testid="cursor"
       className="mix-blend-difference fixed z-[100] pointer-events-none"
       animate={{ x: cursorPos.x - 3, y: cursorPos.y - 3 }}
       transition={{ duration: 0.02 }}
