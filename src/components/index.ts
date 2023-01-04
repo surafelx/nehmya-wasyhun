@@ -9,3 +9,4 @@ export { default as MobileGallery } from './gallery/MobileGallery';
 export { default as HomeCarousel } from './gallery/HomeCarousel';
 export { default as List } from './list/List';
 export { default as Popup } from './popup/Popup';
+export { default as ScrollToTop } from './scroll-to-top/ScrollToTop';

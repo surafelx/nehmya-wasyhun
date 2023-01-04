@@ -1,4 +1,4 @@
-import { Cursor, Loader, Navbar, Popup } from './components';
+import { Cursor, Loader, Navbar, Popup, ScrollToTop } from './components';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AboutPage, HomePage, NotFound, WorkPage, WorkShowcase } from './pages';
@@ -18,6 +18,7 @@ function App() {
           />
         ) : null}
       </AnimatePresence>
+      <ScrollToTop />
       <Navbar />
       <Cursor />
       <motion.main

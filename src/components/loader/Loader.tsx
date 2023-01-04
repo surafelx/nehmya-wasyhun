@@ -23,9 +23,15 @@ const Loader = ({ isLoading, setIsLoading }: LoaderProps) => {
   };
 
   useEffect(() => {
-    window.addEventListener('load', handleLoad);
+    if (document.readyState === 'complete') {
+      handleLoad();
+    } else {
+      window.addEventListener('load', handleLoad);
+    }
 
-    return () => window.removeEventListener('load', handleLoad);
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
   }, []);
 
   return (
