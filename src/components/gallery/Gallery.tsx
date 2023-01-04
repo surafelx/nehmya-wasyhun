@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-interface GalleryProps {
+export interface GalleryProps {
   imgs?: string[];
 }
 

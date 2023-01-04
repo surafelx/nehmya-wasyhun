@@ -1,42 +1,14 @@
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-interface MenuProps {
+export interface MenuProps {
   isOpen: boolean;
   setIsOpen: (state: boolean) => void;
+  menuItems: { name: string; path: string }[];
+  socialLinks: { name: string; href: string }[];
 }
 
-const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
-  const menuItems = [
-    {
-      name: 'Home',
-      path: '/',
-    },
-    {
-      name: 'All work',
-      path: '/work',
-    },
-    {
-      name: 'About',
-      path: '/about',
-    },
-  ];
-
-  const links = [
-    {
-      name: 'Vimeo',
-      href: '#',
-    },
-    {
-      name: 'Instagram',
-      href: '#',
-    },
-    {
-      name: 'Contact',
-      href: '#',
-    },
-  ];
-
+const Menu = ({ isOpen, setIsOpen, menuItems, socialLinks }: MenuProps) => {
   const bgVariants = {
     closed: {
       y: '-100%',
@@ -56,6 +28,7 @@ const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
 
   return (
     <div
+      data-testid="menu"
       className={`fixed h-full w-full z-40 top-0 left-0 ${
         !isOpen ? 'pointer-events-none' : ''
       }`}
@@ -116,7 +89,7 @@ const Menu = ({ isOpen, setIsOpen }: MenuProps) => {
             Director of photography
           </span>
           <div className="flex gap-3 justify-around md:flex-none flex-1">
-            {links.map((link) => (
+            {socialLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}

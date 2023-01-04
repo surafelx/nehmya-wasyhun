@@ -13,6 +13,36 @@ const Navbar = () => {
   const location = useLocation();
   const scrollY = useScrollPosition();
 
+  const menuItems = [
+    {
+      name: 'Home',
+      path: '/',
+    },
+    {
+      name: 'All work',
+      path: '/work',
+    },
+    {
+      name: 'About',
+      path: '/about',
+    },
+  ];
+
+  const socialLinks = [
+    {
+      name: 'Vimeo',
+      href: '#',
+    },
+    {
+      name: 'Instagram',
+      href: '#',
+    },
+    {
+      name: 'Contact',
+      href: '#',
+    },
+  ];
+
   const handleMenu = (state: boolean) => {
     setIsMenuOpen(state);
   };
@@ -58,6 +88,7 @@ const Navbar = () => {
             </MotionLink>
           )}
           <button
+            data-testid="back-button"
             onClick={() => handleMenu(!isMenuOpen)}
             className={`strike-hover hover-link before:bg-primary ${
               isMenuOpen ? 'active' : ''
@@ -70,6 +101,8 @@ const Navbar = () => {
       <Menu
         isOpen={isMenuOpen}
         setIsOpen={(state: boolean) => handleMenu(state)}
+        menuItems={menuItems}
+        socialLinks={socialLinks}
       />
     </>
   );
