@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { fireEvent, render, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import Menu, { MenuProps } from '../Menu';

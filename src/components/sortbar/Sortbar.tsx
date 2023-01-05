@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import ArrowLeft from '../../assets/arrow-left.svg';
 import useWindowWidth from '../../hooks/useWindowWidth';
 
-interface SortbarProps {
+export interface SortbarProps {
   options: string[];
   currentOption: string;
   setCurrentOption: (option: string) => void;
@@ -61,6 +60,7 @@ const Sortbar = ({
             ))}
           </motion.ul>
           <button
+            data-testid="current-option"
             onClick={() => setIsListOpen(!isListOpen)}
             className="flex justify-center items-center h-full w-full hover-link text-sm"
           >

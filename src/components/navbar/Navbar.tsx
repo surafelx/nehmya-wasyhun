@@ -88,7 +88,6 @@ const Navbar = () => {
             </MotionLink>
           )}
           <button
-            data-testid="back-button"
             onClick={() => handleMenu(!isMenuOpen)}
             className={`strike-hover hover-link before:bg-primary ${
               isMenuOpen ? 'active' : ''
