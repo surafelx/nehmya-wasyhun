@@ -86,7 +86,7 @@ const Menu = ({ isOpen, setIsOpen, menuItems, socialLinks }: MenuProps) => {
           className="flex w-full md:px-12 px-4 justify-between"
         >
           <span className="uppercase md:block hidden">
-            Director of photography
+            Visual Artist
           </span>
           <div className="flex gap-3 justify-around md:flex-none flex-1">
             {socialLinks.map((link) => (

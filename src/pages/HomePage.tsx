@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <PageTransition className="md:px-14 px-4 md:py-20 py-12 w-full h-full">
       <Helmet>
-        <title>PhotoPortfolio</title>
+        <title>NEHMEYA WASYHUN</title>
       </Helmet>
       <HomeCarousel albums={albums} />
       <Link

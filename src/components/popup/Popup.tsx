@@ -39,7 +39,7 @@ const Popup = () => {
             rel="noreferrer noopener"
             className="hover-link"
           >
-            - Original website • RAPHAËL BOURDIN
+            - Original website • NEHMEYA WASYHUN
           </a>
         </li>
       </ul>

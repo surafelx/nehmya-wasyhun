@@ -30,17 +30,17 @@ const Navbar = () => {
 
   const socialLinks = [
     {
-      name: 'Vimeo',
-      href: '#',
+      name: 'TELEGRAM',
+      href: 'https://t.me/realisticpictures',
     },
     {
       name: 'Instagram',
-      href: '#',
+      href: 'https://www.instagram.com/nehi_realistic_pictures',
     },
     {
-      name: 'Contact',
-      href: '#',
-    },
+      name: 'PHONE',
+      href: 'tel: +251979079709',
+    }
   ];
 
   const handleMenu = (state: boolean) => {
@@ -79,10 +79,10 @@ const Navbar = () => {
             >
               <div className="flex gap-4">
                 <span className="text-neutral-300 hover-link">
-                  RAPHAËL BOURDIN
+                NEHMEYA WASYHUN
                 </span>
                 <span className="text-gray-500 md:block hidden hover-link">
-                  Director of photography
+                  Visual Artist
                 </span>
               </div>
             </MotionLink>

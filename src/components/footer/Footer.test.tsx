@@ -8,7 +8,7 @@ describe('Footer', () => {
 
     const links = getAllByRole('link') as HTMLAnchorElement[];
 
-    expect(getByText('Copyright © 2022 RAPHAËL BOURDIN')).toBeInTheDocument();
+    expect(getByText('Copyright © 2022 NEHMAYA WASYHUN')).toBeInTheDocument();
     expect(links[0]).toHaveProperty(
       'href',
       'https://francoisxaviermanceau.com/',

@@ -27,7 +27,7 @@ const ImageBlock = ({ path, img, label, className }: ImageBlockProps) => {
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6 }}
-            src={img}
+            src={`../${img}`}
             className="w-full h-full max-h-[600px] object-cover rounded-xl"
           />
         </div>

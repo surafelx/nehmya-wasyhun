@@ -58,7 +58,7 @@ const WorkShowcase = () => {
           value: album?.credits.direc || '-',
         },
         {
-          label: 'Director of photography',
+          label: 'Visual Artist',
           value: album?.credits.photoDirec || '-',
         },
         {
@@ -80,7 +80,7 @@ const WorkShowcase = () => {
   return (
     <PageTransition className="pt-20">
       <Helmet>
-        <title>PhotoPortfolio{album ? ` - ${album.name}` : ''}</title>
+        <title>NEHMEYA WASYHUN{album ? ` - ${album.name}` : ''}</title>
       </Helmet>
       <section className="md:pl-14 px-8">
         {deviceType !== 'desktop' ? (

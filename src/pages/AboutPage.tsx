@@ -16,12 +16,12 @@ const AboutPage = () => {
   return (
     <PageTransition className=" px-4 py-4 text-black">
       <Helmet>
-        <title>PhotoPortfolio - About</title>
+        <title>NEHMEYA WASYHUN - About</title>
       </Helmet>
       <section className="h-[96vh] relative">
-        <img src={Winter} className="w-full h-full object-cover rounded-xl" />
+        <img src={"images/portrait/portrait1.JPG"} className="w-full h-full object-cover rounded-xl" />
         <div className="absolute w-full h-full top-0 lg:p-12 md:p-8 p-4 flex flex-row text-white mix-blend-difference items-end justify-between">
-          <h1 className="md:text-7xl text-5xl">RAPHAËL BOURDIN</h1>
+          <h1 className="md:text-7xl text-5xl">NEHMEYA WASYHUN</h1>
           <a href="#me">
             <img src={ArrowBottom} className="scale-[2] hover-link" />
           </a>
@@ -33,19 +33,18 @@ const AboutPage = () => {
       >
         <div className="flex">
           <p className="md:w-1/2">
-            RAPHAEL BOURDIN IS A FRENCH - IRISH DIRECTOR OF PHOTOGRAPHY BASED IN
-            PARIS.
+           NEHEMYA WASYHUN IS AN ETHIOPIAN VISUAL ARTIST BASED IN ADDIS ABABA.
           </p>
         </div>
         <div className="flex justify-end">
           <p className="md:w-1/2">
             INTERESTED MAINLY IN NARRATIVE WORK, HIS PROJECTS INCLUDE
-            COMMERCIALS FOR DIVERSE LUXURY BRANDS, MUSIC VIDEOS FOR REKNOWN AND
-            EMERGING ARTISTS.
+            COMMERCIALS FOR INFLUENCERS, MUSIC VIDEOS FOR REKNOWN AND
+            EMERGING ARTISTS AND EVENT MEDIA FOR THE TOP EVENTS IN ADDIS.
           </p>
         </div>
       </section>
-      <section className="uppercase about-section">
+      {/* <section className="uppercase about-section">
         <h2 className="md:text-5xl text-3xl mb-8">References</h2>
         <ul className="uppercase">
           {references.map((item) => (
@@ -58,7 +57,7 @@ const AboutPage = () => {
             </li>
           ))}
         </ul>
-      </section>
+      </section> */}
       <section className="md:px-14 px-3 pt-20 pb-5">
         <a
           href="mailto:"

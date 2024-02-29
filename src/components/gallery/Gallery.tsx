@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export interface GalleryProps {
-  imgs?: string[];
+  imgs?: any[];
 }
 
 const Gallery = ({ imgs }: GalleryProps) => {
@@ -32,11 +32,15 @@ const Gallery = ({ imgs }: GalleryProps) => {
             transition={{ duration: 0.4, ease: 'easeInOut' }}
             className="w-full"
           >
-            <img
-              data-testid="gallery-main-img"
-              src={imgs && imgs[currentImg]}
-              className="h-full w-full rounded-xl object-cover"
-            />
+            {imgs ? (
+              <img
+                data-testid="gallery-main-img"
+                src={`../${imgs}` && `../${imgs[currentImg]}`}
+                className="h-full w-full rounded-xl object-cover"
+              />
+            ) : (
+              <></>
+            )}
           </motion.div>
         </AnimatePresence>
         <div className="overflow-hidden rounded-xl">
@@ -57,7 +61,7 @@ const Gallery = ({ imgs }: GalleryProps) => {
                   }`}
                 >
                   <img
-                    src={img}
+                    src={`../${img}`}
                     className="rounded-xl pointer-events-none hover-link md:max-h-max max-h-[100px] w-full object-cover"
                   />
                 </button>

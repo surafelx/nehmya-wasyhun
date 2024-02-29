@@ -24,7 +24,7 @@ const WorkPage = () => {
   return (
     <>
       <Helmet>
-        <title>PhotoPortfolio - All work</title>
+        <title>NEHMEYA WASYHUN - All work</title>
       </Helmet>
       <PageTransition className="pt-20 px-4">
         <h1 className="uppercase md:text-8xl text-4xl md:px-8 px-2 md:my-16 mb-8">
