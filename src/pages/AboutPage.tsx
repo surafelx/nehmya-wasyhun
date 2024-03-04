@@ -19,9 +19,24 @@ const AboutPage = () => {
         <title>NEHMEYA WASYHUN - About</title>
       </Helmet>
       <section className="h-[96vh] relative">
-        <img src={"images/portrait/portrait1.JPG"} className="w-full h-full object-cover rounded-xl" />
+        <div className="flex gap-4">
+         
+
+          <img
+            src={'images/about/about2.JPG'}
+                   className="rounded-xl md:w-full md:max-h-[75vh] h-[75vh] object-cover hover-image"
+          />
+           <img
+            src={'images/about/about1.JPG'}
+                   className="rounded-xl md:w-full md:max-h-[75vh] h-[75vh] object-cover hover-image"
+          />
+          <img
+            src={'images/about/about3.JPG'}
+                   className="rounded-xl md:w-full md:max-h-[75vh] h-[75vh] object-cover hover-image"
+          />
+        </div>
         <div className="absolute w-full h-full top-0 lg:p-12 md:p-8 p-4 flex flex-row text-white mix-blend-difference items-end justify-between">
-          <h1 className="md:text-7xl text-5xl">NEHMEYA WASYHUN</h1>
+          <h1 className="md:text-7xl text-black text-5xl">NEHMEYA WASYHUN</h1>
           <a href="#me">
             <img src={ArrowBottom} className="scale-[2] hover-link" />
           </a>
@@ -33,14 +48,14 @@ const AboutPage = () => {
       >
         <div className="flex">
           <p className="md:w-1/2">
-           NEHEMYA WASYHUN IS AN ETHIOPIAN VISUAL ARTIST BASED IN ADDIS ABABA.
+            NEHEMYA WASYHUN IS AN ETHIOPIAN VISUAL ARTIST BASED IN ADDIS ABABA.
           </p>
         </div>
         <div className="flex justify-end">
           <p className="md:w-1/2">
             INTERESTED MAINLY IN NARRATIVE WORK, HIS PROJECTS INCLUDE
-            COMMERCIALS FOR INFLUENCERS, MUSIC VIDEOS FOR REKNOWN AND
-            EMERGING ARTISTS AND EVENT MEDIA FOR THE TOP EVENTS IN ADDIS.
+            COMMERCIALS FOR INFLUENCERS, MUSIC VIDEOS FOR REKNOWN AND EMERGING
+            ARTISTS AND EVENT MEDIA FOR THE TOP EVENTS IN ADDIS.
           </p>
         </div>
       </section>

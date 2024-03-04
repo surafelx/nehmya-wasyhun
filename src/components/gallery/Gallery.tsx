@@ -33,11 +33,23 @@ const Gallery = ({ imgs }: GalleryProps) => {
             className="w-full"
           >
             {imgs ? (
-              <img
-                data-testid="gallery-main-img"
-                src={`../${imgs}` && `../${imgs[currentImg]}`}
-                className="h-full w-full rounded-xl object-cover"
-              />
+              <div className='flex gap-4'>
+                <img
+                  data-testid="gallery-main-img"
+                  src={`../${imgs}` && `../${imgs[currentImg]}`}
+                  className="h-full w-full rounded-xl object-cover"
+                />
+                <img
+                  data-testid="gallery-main-img"
+                  src={`../${imgs}` && `../${imgs[currentImg + 1]}`}
+                  className="h-full w-full rounded-xl object-cover"
+                />
+                <img
+                  data-testid="gallery-main-img"
+                  src={`../${imgs}` && `../${imgs[currentImg + 2]}`}
+                  className="h-full w-full rounded-xl object-cover"
+                />
+              </div>
             ) : (
               <></>
             )}

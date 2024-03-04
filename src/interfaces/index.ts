@@ -24,4 +24,13 @@ interface Album {
   credits: Credits;
 }
 
-export type { CursorType, Album, Specs, Credits };
+interface Category {
+  key: string;
+  name: string;
+  images: string[];
+  specs: Specs;
+  credits: Credits;
+  tag: string;
+}
+
+export type { CursorType, Album, Category, Specs, Credits };

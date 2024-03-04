@@ -1,0 +1,67 @@
+[
+   {
+    "key": "portrait",
+    "name": "Traditional",
+    "tag": "Portrait",
+    "images": [
+        "images/portrait/fashion/fashion4.jpg",
+        "images/portrait/fashion/fashion1.jpg",
+        "images/portrait/fashion/fashion2.jpg",
+        "images/portrait/fashion/fashion3.jpg",
+        "images/portrait/fashion/fashion5.jpg",
+        "images/portrait/fashion/fashion6.jpg"
+    ],
+    "specs": {
+        "aspect": "2:35",
+        "format": "Digital",
+        "camera": "Canon EOS R6 Mark II ",
+        "lenses": ""
+      },
+      "credits": {
+        "direc": "Nehemya Wasyhun"
+      }
+   },
+   {
+    "key": "portrait",
+    "name": "Conceptual",
+    "tag": "Portrait",
+    "images": [
+        "images/portrait/conceptual/conceptual4.jpeg",
+        "images/portrait/conceptual/conceptual1.jpeg",
+        "images/portrait/conceptual/conceptual2.jpeg",
+        "images/portrait/conceptual/conceptual3.jpeg",
+        "images/portrait/conceptual/conceptual5.jpeg",
+        "images/portrait/conceptual/conceptual6.jpeg"
+    ],
+    "specs": {
+        "aspect": "2:35",
+        "format": "Digital",
+        "camera": "Canon EOS R6 Mark II ",
+        "lenses": ""
+      },
+     
+        "credits": {
+            "direc": "Nehemya Wasyhun"
+          }
+   },
+   {
+    "key": "portrait",
+    "name": "Environmental",
+    "tag": "Portrait",
+    "images": [
+        "images/portrait/environmental/environmental1.JPG",
+        "images/portrait/environmental/environmental2.JPG",
+        "images/portrait/environmental/environmental3.JPG"
+    ],
+    "specs": {
+        "aspect": "2:35",
+        "format": "Digital",
+        "camera": "Canon EOS R6 Mark II ",
+        "lenses": ""
+      },
+      "credits": {
+        "direc": "Nehemya Wasyhun"
+      }
+   }
+  ]
+  

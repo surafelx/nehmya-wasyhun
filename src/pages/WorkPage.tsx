@@ -45,7 +45,7 @@ const WorkPage = () => {
             return (
               <ImageBlock
                 key={album.key}
-                path={`/work/${album.key}`}
+                path={`/category/${album.key}`}
                 img={album.images[0]}
                 label={album.name}
                 className={colSpan}

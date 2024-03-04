@@ -46,11 +46,13 @@ const HomeCarousel = ({ albums }: HomeCarouselProps) => {
       >
         {albums.map((album, i) => (
           <SwiperSlide key={i} className="w-full">
-            <Link to={`/work/${album.key}`}>
-              <img
-                src={album.images[0]}
-                className="rounded-xl md:w-full md:max-h-[75vh] h-[75vh] object-cover hover-image"
-              />
+            <Link to={`/category/${album.key}`}>
+              <div className='flex gap-5'>
+                <img
+                  src={album.images[0]}
+                  className="rounded-xl md:w-full md:max-h-[75vh] h-[75vh] object-cover hover-image"
+                />
+              </div>
             </Link>
           </SwiperSlide>
         ))}
